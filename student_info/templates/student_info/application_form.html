@@ -1,0 +1,40 @@
+<form method="post" action=".">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <input type="submit" value="Apply" >
+</form>
+<br>
+<hr><br>
+<a href="{% url 'college:index' %}">Cancel Apply</a>
+
+{% if form.errors %}
+  <tr>
+    <td colspan="2">
+      {{ form.errors }}
+      {% if not form.fields %}
+        {% for field in form.hidden_fields %}{{ field }}{% endfor %}
+      {% endif %}
+    </td>
+  </tr>
+{% endif %}
+{% for field, errors in form.fields %}
+  <tr{% with classes=field.css_classes %}{% if classes %} class="{{ classes }}"{% endif %}{% endwith %}>
+    <th>{% if field.label %}{{ field.label_tag }}{% endif %}</th>
+    <td>
+      {{ errors }}
+      {{ field }}
+      {% if field.help_text %}
+        <br>
+        <span class="helptext">{{ field.help_text|safe }}</span>
+      {% endif %}
+      {% if forloop.last %}
+        {% for h_field in form.hidden_fields %}{{ h_field }}{% endfor %}
+      {% endif %}
+    </td>
+  </tr>
+{% endfor %}
+{% if not form.fields and not form.errors %}
+  {% for field in form.hidden_fields %}{{ field }}{% endfor %}
+{% endif %}

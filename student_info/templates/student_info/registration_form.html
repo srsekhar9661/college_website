@@ -1,0 +1,23 @@
+{% if form.errors %}{{form.errors}}{% endif %}
+{{department_list}}
+<form method="POST" enctype="multipart/form-data" action=".">
+    {% csrf_token %}
+    Email : <input type="email" name="email"><br>
+    Gender : <select name="gender">
+        {% for code,gen in gender %}
+            <option value="{{code}}">{{gen}}</option>
+        {% endfor %}
+    </select><br>
+    DOB : <input type="date" name="dob" ><br>
+    Nationality : <select name="nationality">
+        {% for code, nation in nationality %}
+            <option value="{{code}}">{{nation}}</option>
+        {% endfor %}
+    </select><br>
+    Profile Pic : <input type="file" name="profile_pic"><br>
+    Mobile Number : <input type="number" name="mobile_number"><br>
+    Password : <input type="password" name="password"><br>
+    <input type="submit" value="Register">
+</form>
+<br><hr><br>
+<a href="{% url 'college:index' %}">Cancel Registration</a>

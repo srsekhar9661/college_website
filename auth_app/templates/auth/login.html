@@ -1,0 +1,12 @@
+
+{% if errors %} {{errors}} {% endif %}
+<form method="post" action=".">
+    {% csrf_token %}
+    <label for="id_email">Email : </label>
+    <input id="id_email" type="email" name="email"><br>
+    {% if form.email.error %} {{form.email.error}} {% endif %}
+    <label for="id_pwd">Password : </label>
+    <input type="password" id="id_pwd" name="password"><br>
+    {% if form.password.error %} {{form.password.error}} {% endif %}
+    <input type="submit" value="Login">
+</form>

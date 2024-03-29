@@ -1,0 +1,8 @@
+<div class="container">
+    <form method="post" enctype="multipart/form-data" action=".">
+        {% if errors %}{{errors}}{% endif %}
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit">
+    </form>
+</div>

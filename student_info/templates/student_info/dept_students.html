@@ -1,0 +1,55 @@
+<table>
+    <thead>
+        <tr>
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <td>
+                            Roll No
+                        </td>
+                    </div>
+                    <div class="col-4">
+                        <td>
+                            Email
+                        </td>
+                    </div>
+                    <div class="col-4">
+                        <td>
+                            Name
+                        </td>
+                    </div>
+                </div>
+            </div>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+            <tr>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4">
+                            <td>
+                                {{student.id}}
+                            </td>
+                        </div>
+                        <div class="col-4">
+                            <td>
+                                {{student.application.email}}
+                            </td>
+                        </div>
+                        <div class="col-4">
+                            <td>
+                                {{student.application.name}}
+                            </td>
+                        </div>
+                    </div>
+                </div>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<div class="container">
+    <button><a href="{% url 'student:stu_dashboard' %}">Back</a> </button><br>
+    <button><a href="{% url 'authentication:stu_logout' %}">Logout</a> </button>
+</div>

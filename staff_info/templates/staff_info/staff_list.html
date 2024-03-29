@@ -1,0 +1,22 @@
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Email</th>
+            <th>Mobile_number</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for staff in staffs %}
+            <tr>
+                <td>{{staff.name}}</td>
+                <td>{{staff.department}}</td>
+                <td>{{staff.user.email}}</td>
+                <td>{{staff.user.mobile_number}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'staff:staff_detail' %}">Back</a><br>
+<a href="{% url 'authentication:staff_logout' %}">Logout</a>

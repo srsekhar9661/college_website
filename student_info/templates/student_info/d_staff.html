@@ -1,0 +1,28 @@
+{% if staff_list %}
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for staff in staff_list  %}
+                <tr>
+                    <td>{{staff.name}}</td>
+                    <td>{{staff.user.email}}</td>
+                    <td>{{staff.user.mobile_number}}</td>
+                    <td>{{staff.department}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <h1>No staff are available.</h1>
+{% endif %}
+
+<br><hr><br>
+<a href="{% url 'student:stu_dashboard' %}">Back</a><br>
+<a href="{% url 'authentication:stu_logout' %}">Logout</a>

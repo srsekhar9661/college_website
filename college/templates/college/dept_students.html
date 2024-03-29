@@ -1,0 +1,25 @@
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Roll Number</th>
+            <th>Mobile Number</th>
+            <th>Intermediate</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+            <tr>
+                <td>{{student.applicaton.name}}</td>
+                <td>{{student.user.email}}</td>
+                <td>{{student.id}}</td>
+                <td>{{student.application.intermediate}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<br><hr><br>
+<a href="{% url 'college:depts' %}">Back</a><br>
+<a href="{% url 'authentication:staff_logout' %}">Logout</a>

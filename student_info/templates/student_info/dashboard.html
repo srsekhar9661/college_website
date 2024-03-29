@@ -1,0 +1,92 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <table>
+                <tr>
+                    <td>
+                        <strong>Name</strong>
+                    </td>
+                    <td>
+                        <p>{{profile.application.name}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Email</strong>
+                    </td>
+                    <td>
+                        <p>{{profile.application.email}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>SSC</strong>
+                    </td>
+                    <td>
+                        <p>{{profile.application.ssc}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Intermediate</strong>
+                    </td>
+                    <td>
+                        <p>{{profile.application.intermediate}}</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-6">
+            <table>
+                <tr>
+                    <td>
+                        <strong>Department</strong>
+                    </td>
+                    <td>
+                        <p>{{profile.application.department}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Gender</strong>
+                    </td>
+                    <td>
+                        <p>{{profile.gender}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Nationality</strong>
+                    </td>
+                    <td>
+                        <p>{{profile.nationality}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Date of Birth</strong>
+                    </td>
+                    <td>
+                        <p>{{profile.dob}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Profile Picture</strong>
+                    </td>
+                    <td>
+                        <img src="{{profile.profile_pic.url}}" class="imgage-fluid" style="width: 100px; height: 70px;" >
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="">
+    <button><a href="{% url 'student:dept_students' profile.application.department %}">Student List</a></button><br>
+    <button>
+        <a href="{% url 'student:staff' %}">Staff List</a>
+    </button><br>
+    <button><a href="{% url 'authentication:stu_logout' %}">Logout</a></button><br>
+</div>
+

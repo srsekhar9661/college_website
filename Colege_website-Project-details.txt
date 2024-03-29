@@ -1,0 +1,92 @@
+Colege_website   Project
+
+Requirement :
+    It's a 13 page requirement
+
+1. Index page :
+    It contains 5- links
+        a. Student application  => 2
+        b. Student Registration => 3
+        c. Student Login        => 4
+        d. Staff Registration   => 7
+        e. Staff Login          => 8
+2. Sudent Application Page :
+    It is a form page fro students application to the college
+    contains 5 - fields :
+        name,  email, ssc, Intermediate, B-tech department
+        and a save button on saving it redirects to 1-page
+
+3. Student Registration page:
+    College accepts the students registrations if the applicaton is approved by the college
+    email field in both the application and the Registration must be same if not tell them to enter  a valid email
+    college contains only 100 seats what ever the department is don't accept the application if the application count to the college is greater than or equal to 100
+
+    form fields are:
+        email, gender, dob, nationality, profile_pic, mobile_number, password
+        and a save button . If saved redirect to the 1-page if successful.
+
+4. Student Login Page:
+    contains fields :
+        email, password
+        login button redirect to the 5-page on successful login
+
+5. Student Dashboard:
+    It shows the details of the student:
+        name, email, ss, intermediate, department, gender, dob, nationality, profile_pic
+        contains 3-buttons
+        a. Student list => 6
+        b. Staff List => 13
+        c. Logout => 4
+
+6. Students List of that department
+    roll_no, email, name  =>  of that particular department
+        2-buttons:
+        a. Back => 5
+        b. Logout => 4
+
+7.Staff Registration Page:
+    It is a form page contains fields:
+        name, email, dob, department, experience, qualification, password, profle_pic, mobile_number
+        and a save button on successsful save redirects to 1-page
+        a Back/Cancel button to the 1-page
+
+8. Staff Login page:
+    contains fields :
+        email, password
+        login button on successful login redirects to the 9-page
+
+9. Staff Profile or dashboard page:
+    contains the details of name, emaial, department, profile_pic
+    contains 3-buttons :
+        a. Staff list => 10
+        b. Student List => 11
+        c. Logout => 8
+
+10. Staff list of that particular department
+    contains fields :
+        name, department, email, mobile_number
+    contains 2-button :
+        a. Back => 9
+        b. Logout => 8
+
+11. Shows all the department in the form of list :
+    Each deparment is a link redirecting to the 12-page
+        eg:
+            EEE
+            ECE
+            CSE
+    contains 2-buttons :
+        a. Back => 9
+        b. Logout => 8
+
+12. List of all depatment students page:
+    shows the details of name, email, roll_no, number, intermediate
+    contains 2-buttons :
+        a. Back => 2
+        b. Logout => 11
+                           
+13. Staff list Page:
+    contains fields of nae emal department
+    contains 2-buttons :
+        a. Back => 5
+        b. Logout => 4

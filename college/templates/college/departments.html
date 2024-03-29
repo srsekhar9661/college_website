@@ -1,0 +1,11 @@
+{% if depts %}
+    {% for dept in depts %}
+        <a href="{% url 'college:d_std' dept %}"><p>{{dept}}</p></a>
+    {% endfor %}
+{% else %}
+    <h1>Departments are Found.</h1>
+{% endif %}
+
+<br><hr><br>
+<a href="{% url 'staff:staff_detail' %}">Back</a><br>
+<a href="{% url 'authentication:staff_logout' %}">Logout</a>
